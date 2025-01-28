@@ -4,6 +4,10 @@ from matplotlib import pyplot as plt
 np.random.seed(0) # fix the random seed to make sure that always the same noise is added to the data
 
 '''
+Note: Please be aware that usually the data is normalized or standardized before solving the sparse regression problem. For example, the feature vectors, i.e., the columns of the matrix features_2(x_data), may be devided by their norms. Then, after solving the regression problem, the parameters must be devided by these feature vector norms to recover the original parameters. This normalization has no influence on the solution of the ordinary regression problem, but it matters for the sparse regression problem. Here, no normalization is applied.
+'''
+
+'''
 Defining the true function that we want to derive.
 '''
 def f_true(x):
